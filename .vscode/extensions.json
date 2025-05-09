@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "angular.ng-template",
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "csharpier.csharpier-vscode",
+    "firsttris.vscode-jest-runner",
+    "dbaeumer.vscode-eslint"
+  ]
+}

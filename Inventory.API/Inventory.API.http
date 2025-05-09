@@ -1,0 +1,39 @@
+@url = http://localhost:5011
+@contentType = application/json
+
+
+GET {{url}}/api/notifications
+
+### Create Product
+POST {{url}}/api/products
+Content-Type: {{contentType}}
+
+{
+    "name": "Test Product",
+    "description": "This is a test product",
+    "price": 99.99,
+    "stock": 100,
+    "category": "Test"
+}
+
+### Update Product
+PUT {{url}}/api/products/1
+Content-Type: {{contentType}}
+
+{
+    "name": "Updated Product",
+    "description": "This is an updated product",
+    "price": 149.99,
+    "stock": 50,
+    "category": "Updated"
+}
+
+### Delete Product
+DELETE {{url}}/api/products/1
+
+### Get All Products
+GET {{url}}/api/products
+
+### Get Product by Id
+GET {{url}}/api/products/1
+
