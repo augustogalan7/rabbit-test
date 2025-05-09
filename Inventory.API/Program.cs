@@ -17,9 +17,9 @@ builder.Services.AddSwaggerGen();
 // Configure RabbitMQ
 builder.Services.Configure<RabbitMQConfig>(builder.Configuration.GetSection("RabbitMQ"));
 
-// Configure DbContext
+// Configure DbContext using configuration from appsettings.json
 builder.Services.AddDbContext<InventoryDbContext>(options =>
-    options.UseSqlite("Data Source=../SharedData/inventory.db")
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
 builder.Services.AddMassTransit(x =>
@@ -112,7 +112,6 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<InventoryDbContext>();
-    dbContext.Database.EnsureCreated();
 }
 
 app.Run();

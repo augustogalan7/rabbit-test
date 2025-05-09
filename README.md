@@ -69,7 +69,7 @@ dotnet restore
 2. Ejecutar Inventory.API:
 ```bash
 cd Inventory.API
-dotnet watch --project ./Notification.Api/
+dotnet watch --project ./Inventory.Api/
 dotnet run
 ```
 

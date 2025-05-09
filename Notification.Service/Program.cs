@@ -14,8 +14,9 @@ builder.ConfigureServices(
     {
         services.Configure<RabbitMQConfig>(hostContext.Configuration.GetSection("RabbitMQ"));
 
+        // Configure DbContext
         services.AddDbContext<InventoryDbContext>(options =>
-            options.UseSqlite("Data Source=../SharedData/inventory.db")
+            options.UseSqlite("Data Source=/shared/inventory.db")
         );
 
         services.AddMassTransit(x =>
